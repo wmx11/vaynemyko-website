@@ -1,0 +1,27 @@
+---
+import Card from '../../components/Card.astro';
+import Container from '../../components/Container.astro';
+import Heading from '../../components/Heading.astro';
+import Section from '../../components/Section.astro';
+---
+
+<Section>
+  <Container>
+    <Heading
+      title="Recent Blog Posts"
+      subtitle="Deep dives on human potential, lifestyle design, & one-person businesses."
+    />
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+    <div class="flex justify-center">
+      <button class="btn btn-white">Browse all posts</button>
+    </div>
+  </Container>
+</Section>

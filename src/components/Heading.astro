@@ -1,0 +1,19 @@
+---
+import { twMerge } from 'tailwind-merge';
+import H1 from './H1.astro';
+import H2 from './H2.astro';
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  className?: string;
+}
+
+const { title, subtitle, className } = Astro.props;
+---
+
+<div class={twMerge('mb-16 space-y-6 animate', className)}>
+  <H1>{title}</H1>
+  <H2>{subtitle}</H2>
+  <slot />
+</div>

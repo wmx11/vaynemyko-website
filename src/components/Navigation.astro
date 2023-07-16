@@ -1,0 +1,22 @@
+---
+import navigation from '../utils/navigation';
+import Container from './Container.astro';
+---
+
+<nav class="bg-black sticky top-0 z-10 py-4">
+  <Container className="flex justify-between gap-32">
+    <div>Vayne Myko</div>
+    <div>
+      <ul class="flex gap-8 [&>li]:font-bold">
+        {
+          navigation.map((item) => (
+            <li>
+              <a href={item.href}>{item.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+    <div></div>
+  </Container>
+</nav>

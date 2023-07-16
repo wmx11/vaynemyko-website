@@ -1,0 +1,29 @@
+---
+import H1 from '../../components/H1.astro';
+import H2 from '../../components/H2.astro';
+import HeroWrapper from '../../components/HeroWrapper.astro';
+---
+
+<section>
+  <HeroWrapper>
+    <div class="flex-1 flex items-center p-16">
+      <div class="flex flex-col space-y-8 flex-1">
+        <H1 className="animate">Value prop</H1>
+        <H2 className="animate">Secondary value prop</H2>
+        <div class="flex gap-4 items-center animate">
+          <div class="form-control w-full max-w-xs">
+            <input
+              type="text"
+              placeholder="Enter Your Email Address"
+              class="input input-bordered w-full max-w-xs"
+            />
+          </div>
+          <div>
+            <button class="btn btn-primary">Join +30k readers</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bg-zinc-500 flex-1 p-16">Image</div>
+  </HeroWrapper>
+</section>
