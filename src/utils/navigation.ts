@@ -8,6 +8,10 @@ const navigation = [
     href: '#',
   },
   {
+    label: 'Blog',
+    href: '#',
+  },
+  {
     label: 'Newsletter',
     href: '#',
   },
