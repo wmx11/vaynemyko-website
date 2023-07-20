@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../components/Container.astro';
+import Section from '../components/Section.astro';
+import Layout from '../layouts/Layout.astro';
+import NewsletterCTACard from '../components/NewsletterCTACard.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title="Welcome to Astro.">
+  <Section>
+    <Container>
+      <div
+        class="h-[500px] bg-red-200 rounded-md mb-16 max-w-5xl w-full mx-auto overflow-hidden"
+      >
+        <Image
+          src="https://cdn.pixabay.com/photo/2023/07/15/01/16/cactus-8127922_1280.jpg"
+          alt=""
+          width="1000"
+          height="500"
+          class="w-full h-auto"
+        />
+      </div>
+      <article class="prose !prose-invert prose-lg mx-auto">
+        <slot />
+      </article>
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <div class="flex items-center justify-center">
+        <NewsletterCTACard />
+      </div>
+    </Container>
+  </Section>
+</Layout>

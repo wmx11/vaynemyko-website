@@ -1,33 +1,11 @@
 ---
 import Container from '../../components/Container.astro';
-import H2 from '../../components/H2.astro';
+import NewsletterCTACard from '../../components/NewsletterCTACard.astro';
 import Section from '../../components/Section.astro';
 ---
 
 <Section>
   <Container className="flex justify-center">
-    <div class="card bg-primary w-full max-w-5xl p-24 space-y-4">
-      <H2>
-        Learn more about archetypes and how to become a digital blacksmith
-      </H2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
-      </p>
-      <div class="flex gap-4 items-center animate">
-        <div class="form-control w-full max-w-xs">
-          <input
-            type="text"
-            placeholder="Enter Your Email Address"
-            class="input input-bordered w-full max-w-xs"
-          />
-        </div>
-        <div>
-          <button class="btn btn-neutral">Join +30k readers</button>
-        </div>
-      </div>
-    </div>
+    <NewsletterCTACard />
   </Container>
 </Section>

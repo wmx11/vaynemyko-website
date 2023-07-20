@@ -1,0 +1,21 @@
+---
+import Container from '../components/Container.astro';
+import Heading from '../components/Heading.astro';
+import Section from '../components/Section.astro';
+import Layout from './Layout.astro';
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter.title}>
+  <Section>
+    <Container className="flex flex-col items-center">
+      <div>
+        <Heading title={frontmatter.title} subtitle={frontmatter.subtitle} />
+        <div class="prose-invert prose-lg max-w-3xl">
+          <slot />
+        </div>
+      </div>
+    </Container>
+  </Section>
+</Layout>

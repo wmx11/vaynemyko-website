@@ -3,13 +3,14 @@ import Card from '../../components/Card.astro';
 import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
+import routes from '../../utils/routes';
 ---
 
-<Section>
+<Section id="blog">
   <Container>
     <Heading
-      title="Recent Blog Posts"
-      subtitle="Deep dives on human potential, lifestyle design, & one-person businesses."
+      title="Notes From The Forge"
+      subtitle="Documenting the digital process. Dive deep on topics of real and digital experiences, mindset, time, and the digital world"
     />
     <div class="grid md:grid-cols-3 gap-8 mb-16">
       <Card />
@@ -20,7 +21,7 @@ import Section from '../../components/Section.astro';
       <Card />
     </div>
     <div class="flex justify-center">
-      <button class="btn btn-white">Browse all posts</button>
+      <a href={routes.blog} class="btn btn-white">Browse all posts</a>
     </div>
   </Container>
 </Section>

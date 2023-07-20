@@ -1,15 +1,17 @@
+import routes from './routes';
+
 const navigation = [
   {
     label: 'About',
-    href: '#',
+    href: '#about',
   },
   {
     label: 'Resources',
-    href: '#',
+    href: '#resources',
   },
   {
     label: 'Blog',
-    href: '#',
+    href: '#blog',
   },
   {
     label: 'Newsletter',
@@ -31,33 +33,33 @@ export const footerNavigation = [
     navigation: [
       {
         label: 'Privacy policy',
-        href: '#',
+        href: '/privacy-policy',
       },
       {
         label: 'Terms of service',
         href: '#',
       },
       {
-        label: 'Cokie policy',
+        label: 'Cookie policy',
         href: '#',
       },
     ],
   },
   {
-    section: 'Social',
+    section: 'Follow me',
     navigation: [
       {
         label: 'Twitter',
-        href: '#',
+        href: 'https://twitter.com/vaynemyko',
       },
       {
         label: 'LinkedIn',
-        href: '#',
+        href: 'https://www.linkedin.com/in/vainius-mykolaitis-07baa412a/',
       },
-      {
-        label: 'Instagram',
-        href: '#',
-      },
+      // {
+      //   label: 'Instagram',
+      //   href: '#',
+      // },
     ],
   },
 ];

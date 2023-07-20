@@ -1,17 +1,20 @@
 ---
-import Card from '../../components/Card.astro';
 import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
+import ProductCard from '../../components/ProductCard.astro';
 import Section from '../../components/Section.astro';
 ---
 
-<Section>
+<Section id="resources">
   <Container>
-    <Heading title="Your Toolbox" />
+    <Heading
+      title="The Toolbox"
+      subtitle="Tools to help you craft real and digital experiences, and navigate the digital worlds"
+    />
     <div class="grid grid-cols-3 gap-8">
-      <Card />
-      <Card />
-      <Card />
+      <ProductCard />
+      <ProductCard />
+      <ProductCard />
     </div>
   </Container>
 </Section>

@@ -24,9 +24,20 @@
           "isPublishDate": true
         },
         {
-          "title": "Content preview",
-          "name": "preview",
+          "title": "Last updated date",
+          "name": "updatedDate",
+          "type": "datetime",
+          "isModifiedDate": true
+        },
+        {
+          "title": "Content image",
+          "name": "contentImage",
           "type": "image"
+        },
+        {
+          "title": "Content image alt",
+          "name": "contentImageAlt",
+          "type": "string"
         },
         {
           "title": "Is in draft",
