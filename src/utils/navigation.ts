@@ -50,6 +50,14 @@ export const footerNavigation = [
         label: 'Twitter',
         href: '#',
       },
+      {
+        label: 'LinkedIn',
+        href: '#',
+      },
+      {
+        label: 'Instagram',
+        href: '#',
+      },
     ],
   },
 ];

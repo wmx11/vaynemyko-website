@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import H1 from '../../components/H1.astro';
 import H2 from '../../components/H2.astro';
 import HeroWrapper from '../../components/HeroWrapper.astro';
@@ -8,8 +9,10 @@ import HeroWrapper from '../../components/HeroWrapper.astro';
   <HeroWrapper>
     <div class="flex-1 flex items-center p-16">
       <div class="flex flex-col space-y-8 flex-1">
-        <H1 className="animate">Value prop</H1>
-        <H2 className="animate">Secondary value prop</H2>
+        <H1 className="animate">Become The Digital Blacksmith</H1>
+        <H2 className="animate">
+          Master the craft of forging experiences, mind, and time
+        </H2>
         <div class="flex gap-4 items-center animate">
           <div class="form-control w-full max-w-xs">
             <input
@@ -19,11 +22,13 @@ import HeroWrapper from '../../components/HeroWrapper.astro';
             />
           </div>
           <div>
-            <button class="btn btn-primary">Join +30k readers</button>
+            <button class="btn btn-primary">Join the readership</button>
           </div>
         </div>
       </div>
     </div>
-    <div class="bg-zinc-500 flex-1 p-16">Image</div>
+    <div class="bg-zinc-500 p-16 flex-1 relative overflow-hidden">
+      <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
+    </div>
   </HeroWrapper>
 </section>
