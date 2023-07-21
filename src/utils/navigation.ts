@@ -11,7 +11,7 @@ const navigation = [
   },
   {
     label: 'Blog',
-    href: '#blog',
+    href: routes.blog,
   },
   {
     label: 'Newsletter',

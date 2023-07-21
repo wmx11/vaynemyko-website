@@ -1,5 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
+import Container from '../../components/Container.astro';
+import Section from '../../components/Section.astro';
 import Layout from '../../layouts/Layout.astro';
+import BlogPostCard from '../../components/BlogPostCard.astro';
+import Heading from '../../components/Heading.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+// Get all non-draft blog posts
+const allBlogPosts = await getCollection(
+  'blog',
+  ({ data }) => data.draft !== true
+);
 ---
 
-<Layout title="Blog Posts" />
+<Layout title="Blog Posts">
+  <Section>
+    <Container>
+      <Breadcrumbs crumbs={[{ label: 'Blog' }]} />
+      <Heading title="Blog Posts" subtitle="Blog posts subtitle" />
+      <div class="grid md:grid-cols-3 gap-8 mb-16">
+        {allBlogPosts.map((post) => <BlogPostCard {...post} />)}
+      </div>
+    </Container>
+  </Section>
+</Layout>

@@ -12,6 +12,11 @@
           "type": "string"
         },
         {
+          "title": "Slug",
+          "name": "slug",
+          "type": "slug"
+        },
+        {
           "title": "Description",
           "name": "description",
           "type": "string"
@@ -59,5 +64,5 @@
   ],
   "frontMatter.framework.id": "astro",
   "frontMatter.content.publicFolder": "public",
-  "frontMatter.preview.host": "http://localhost:3000"
+  "frontMatter.preview.host": "http://localhost:3000/blog"
 }

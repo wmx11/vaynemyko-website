@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import routes from '../utils/routes';
+
+const {
+  data: { title, description, date, contentImage, contentImageAlt },
+  slug,
+} = Astro.props as CollectionEntry<'blog'>;
+---
+
+<div
+  class="card bg-primary/20 shadow-xl overflow-hidden transition-transform hover:scale-[1.02]"
+>
+  <div class="w-full h-[300px] bg-zinc-500 overflow-hidden">
+    {
+      contentImage && (
+        <Image
+          src={contentImage}
+          alt={contentImageAlt}
+          width="100%"
+          height={300}
+          class="w-full max-w-[100%]"
+        />
+      )
+    }
+  </div>
+  <div class="card-body">
+    <h2 class="card-title">{title}</h2>
+    <time class="text-sm text-white/50" datetime={date.toISOString()}>
+      {date.toISOString().split('T').at(0)}
+    </time>
+    <p class="mb-4">
+      {description}
+    </p>
+    <div class="card-actions justify-center">
+      <a
+        class="btn btn-primary btn-md btn-block"
+        href={`${routes.blog}/${slug}`}>Read full note</a
+      >
+    </div>
+  </div>
+</div>

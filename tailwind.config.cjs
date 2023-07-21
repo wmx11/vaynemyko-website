@@ -16,12 +16,14 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
+          ...require('daisyui/src/theming/themes')['[data-theme=synthwave]'],
           primary: 'var(--primary)',
+          'primary-focus': 'var(--primary-focus)',
           secondary: 'var(--secondary)',
           accent: 'var(--accent)',
           neutral: 'var(--black)',
           '--p': 'var(--primary)',
+          '--pf': 'var(--primary-focus)',
           '--s': 'var(--secondary)',
           '--a': 'var(--accent)',
           '--n': 'var(--black)',

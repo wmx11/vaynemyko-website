@@ -2,11 +2,12 @@
 import H1 from '../../components/H1.astro';
 import H2 from '../../components/H2.astro';
 import HeroWrapper from '../../components/HeroWrapper.astro';
+import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
 ---
 
 <section>
-  <HeroWrapper>
-    <div class="flex-1 flex items-center p-16">
+  <HeroWrapper className="justify-center">
+    <div class="flex-1 flex items-center p-16 max-w-4xl">
       <div class="flex flex-col space-y-8 flex-1">
         <H1 className="animate">
           Forge Your Own Path. Become The Digital Blacksmith
@@ -16,7 +17,10 @@ import HeroWrapper from '../../components/HeroWrapper.astro';
           crafting real and digital experiences, tempering the mind, and
           multiplying time with 1 actionable tip every Saturday.
         </H2>
-        <div class="flex gap-4 items-center animate">
+        <div>
+          <NewsletterForm client:idle />
+        </div>
+        <!-- <div class="flex gap-4 items-center animate">
           <div class="flex-1 form-control w-full">
             <input
               type="text"
@@ -27,11 +31,11 @@ import HeroWrapper from '../../components/HeroWrapper.astro';
           <div>
             <button class="btn btn-primary">Join the readership</button>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
-    <div class="bg-zinc-500 p-16 flex-1 relative overflow-hidden">
-      <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
-    </div>
+    <!-- <div class="bg-zinc-500 p-16 flex-1 relative overflow-hidden"> -->
+    <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
+    <!-- </div> -->
   </HeroWrapper>
 </section>

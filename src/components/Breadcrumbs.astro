@@ -1,0 +1,27 @@
+---
+interface Props {
+  crumbs?: {
+    label?: string;
+    path?: string;
+  }[];
+}
+
+const { crumbs } = Astro.props;
+---
+
+<div class="text-sm breadcrumbs mb-4">
+  <ul>
+    <li><a href="/">Home</a></li>
+    {
+      crumbs?.map((item, index) => (
+        <li>
+          {index + 1 === crumbs.length ? (
+            item.label
+          ) : (
+            <a href={item?.path}>{item?.label}</a>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
