@@ -35,4 +35,28 @@
       height: 60%;
     }
   }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+      transform: translateY(20px) rotate(10deg);
+    }
+
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+  }
+
+  .float {
+    animation: float 8s ease infinite;
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        animation-delay: 800ms * $i;
+      }
+    }
+  }
 </style>

@@ -3,6 +3,12 @@ import H1 from '../../components/H1.astro';
 import H2 from '../../components/H2.astro';
 import HeroWrapper from '../../components/HeroWrapper.astro';
 import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
+import Time from '../../assets/time.png';
+import Anvil from '../../assets/anvil.png';
+import Hammer from '../../assets/hammer.png';
+import Alchemy from '../../assets/alchemy.png';
+import Divider from '../../assets/divider.png';
+import { Image } from 'astro:assets';
 ---
 
 <section>
@@ -36,5 +42,37 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
     <!-- <div class="bg-zinc-500 p-16 flex-1 relative overflow-hidden"> -->
     <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
     <!-- </div> -->
+    <div class="w-[80px] h-[80px] absolute top-[20%] left-[20%] float animate">
+      <Image
+        src={Time}
+        alt="time hologram"
+        class="absolute inset-0 w-full h-full"
+      />
+    </div>
+    <div class="w-[80px] h-[80px] absolute top-[5%] right-[25%] float animate">
+      <Image
+        src={Hammer}
+        alt="time hologram"
+        class="absolute inset-0 w-full h-full"
+      />
+    </div>
+    <div
+      class="w-[80px] h-[80px] absolute bottom-[15%] right-[15%] float animate"
+    >
+      <Image
+        src={Anvil}
+        alt="anvil hologram"
+        class="absolute inset-0 w-full h-full"
+      />
+    </div>
+    <div
+      class="w-[80px] h-[80px] absolute bottom-[15%] left-[10%] float animate"
+    >
+      <Image
+        src={Alchemy}
+        alt="time hologram"
+        class="absolute inset-0 w-full h-full"
+      />
+    </div>
   </HeroWrapper>
 </section>
