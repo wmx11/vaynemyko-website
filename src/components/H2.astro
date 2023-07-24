@@ -3,11 +3,12 @@ import { twMerge } from 'tailwind-merge';
 
 interface Props {
   className?: string;
+  highlight?: string[];
 }
 
-const { className } = Astro.props;
+const { className, highlight } = Astro.props;
 ---
 
-<h2 class={twMerge('text-2xl', className)}>
+<h2 class={twMerge('text-2xl', className)} data-highlight={highlight}>
   <slot />
 </h2>

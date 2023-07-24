@@ -3,11 +3,31 @@ import navigation from '../utils/navigation';
 import Container from './Container.astro';
 ---
 
-<nav class="bg-black sticky top-0 z-20 py-4">
-  <Container className="flex justify-between gap-32">
-    <div>Vayne Myko</div>
-    <div>
-      <ul class="flex gap-8 [&>li]:font-bold">
+<script>
+  const navigationWrapper = document.querySelector('nav');
+  const burger = document.querySelector('#burger');
+
+  burger?.addEventListener('click', () => {
+    navigationWrapper?.classList[
+      navigationWrapper?.classList.contains('open') ? 'remove' : 'add'
+    ]('open');
+  });
+</script>
+
+<nav
+  class="bg-black border-y border-y-primary/20 fixed bottom-0 md:sticky md:top-0 z-20 py-4 w-full h-[61px] md:h-auto"
+>
+  <Container
+    className="flex flex-col md:flex-row md:justify-between gap-32 text-right md:text-left"
+  >
+    <a
+      href="/"
+      class="absolute md:relative top-[18px] md:top-0 left-[22px] md:left-0"
+    >
+      <div>Vayne Myko</div>
+    </a>
+    <div class="pt-16 md:pt-0">
+      <ul class="flex flex-col md:flex-row gap-8 [&>li]:font-bold">
         {
           navigation.map((item) => (
             <li>
@@ -19,4 +39,22 @@ import Container from './Container.astro';
     </div>
     <div></div>
   </Container>
+  <div
+    class="w-[61px] h-[61px] absolute top-0 right-0 md:hidden flex items-center justify-center cursor-pointer"
+    id="burger"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-6 h-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </div>
 </nav>

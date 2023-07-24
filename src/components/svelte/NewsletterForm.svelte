@@ -10,7 +10,7 @@
   <div class="flex-1 form-control w-full">
     <input
       bind:value={input}
-      type="text" 
+      type="text"
       placeholder="Enter Your Email Address"
       class="input input-primary w-full"
     />
@@ -20,7 +20,7 @@
   </div>
   <div>
     <button class="btn btn-primary" on:click={handleClick}
-      >Join the readership</button
+      >Join the anvil</button
     >
   </div>
 </div>

@@ -19,14 +19,16 @@ const blogPosts = allBlogPosts.splice(0, 6);
 <Section id="blog">
   <Container>
     <Heading
+      highlight={['The Forge']}
       title="Notes From The Forge"
-      subtitle="Documenting the digital process. Dive deep on topics of real and digital experiences, mindset, time, and the digital world"
+      subtitle="Dive deep on topics of real and digital experiences, mindset, time, alchemy, and solopreneurship"
+      position="center"
     />
     <div class="grid md:grid-cols-3 gap-8 mb-16">
       {blogPosts.map((post) => <BlogPostCard {...post} />)}
     </div>
     <div class="flex justify-center">
-      <a href={routes.blog} class="btn btn-outline">Browse all posts</a>
+      <a href={routes.blog} class="btn btn-outline btn-md">Browse all posts</a>
     </div>
   </Container>
 </Section>

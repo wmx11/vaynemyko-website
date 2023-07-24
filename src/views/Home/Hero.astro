@@ -7,15 +7,14 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
 
 <section>
   <HeroWrapper className="justify-center">
-    <div class="flex-1 flex items-center p-16 max-w-4xl">
+    <div class="flex-1 flex items-center p-16 max-w-4xl text-center">
       <div class="flex flex-col space-y-8 flex-1">
-        <H1 className="animate">
-          Forge Your Own Path. Become The Digital Blacksmith
+        <H1 className="animate" highlight={['digital', 'blacksmith', 'your']}>
+          ready to forge your path? <br /> become a digital blacksmith
         </H1>
         <H2 className="animate">
-          Join other subscribers on "The Digital Anvil". Master the art of
-          crafting real and digital experiences, tempering the mind, and
-          multiplying time with 1 actionable tip every Saturday.
+          Join <strong>"The Anvil"</strong>. Forge your own path every Saturday
+          with topics on experiences, solopreneurship, alchemy, and mindset.
         </H2>
         <div>
           <NewsletterForm client:idle />
