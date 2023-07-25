@@ -1,6 +1,9 @@
 ---
+import GradientBlur from './GradientBlur.astro';
 import H2 from './H2.astro';
 import NewsletterForm from './svelte/NewsletterForm.svelte';
+import { Image } from 'astro:assets';
+import Anvil from '../assets/anvil.png';
 ---
 
 <div
@@ -21,12 +24,13 @@ import NewsletterForm from './svelte/NewsletterForm.svelte';
     <NewsletterForm client:visible />
   </div>
 
-  <div
-    class="absolute w-[500px] h-[500px] bg-accent top-[-250px] left-[-250px] rounded-full blur-[200px]"
-  >
-  </div>
-  <div
-    class="absolute w-[500px] h-[500px] bg-secondary bottom-[-250px] right-[-250px] rounded-full blur-[200px]"
-  >
+  <GradientBlur />
+
+  <div class="absolute w-[50px] h-[50px] top-[2%] left-[2%] float z-0">
+    <Image
+      src={Anvil}
+      alt="Anvil image"
+      class="absolute inset-0 w-full h-full hover:scale-125 transition"
+    />
   </div>
 </div>

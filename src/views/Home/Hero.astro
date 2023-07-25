@@ -1,21 +1,23 @@
 ---
+import { Image } from 'astro:assets';
+import Alchemy from '../../assets/alchemy.png';
+import Anvil from '../../assets/anvil.png';
+import Hammer from '../../assets/hammer.png';
+import Time from '../../assets/time.png';
 import H1 from '../../components/H1.astro';
 import H2 from '../../components/H2.astro';
 import HeroWrapper from '../../components/HeroWrapper.astro';
 import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
-import Time from '../../assets/time.png';
-import Anvil from '../../assets/anvil.png';
-import Hammer from '../../assets/hammer.png';
-import Alchemy from '../../assets/alchemy.png';
-import Divider from '../../assets/divider.png';
-import { Image } from 'astro:assets';
 ---
 
 <section>
   <HeroWrapper className="justify-center">
     <div class="flex-1 flex items-center p-16 max-w-4xl text-center">
       <div class="flex flex-col space-y-8 flex-1">
-        <H1 className="animate" highlight={['digital', 'blacksmith', 'your']}>
+        <H1
+          className="animate"
+          highlight={['digital', 'blacksmith', 'forge your path']}
+        >
           ready to forge your path? <br /> become a digital blacksmith
         </H1>
         <H2 className="animate">
@@ -25,35 +27,20 @@ import { Image } from 'astro:assets';
         <div>
           <NewsletterForm client:idle />
         </div>
-        <!-- <div class="flex gap-4 items-center animate">
-          <div class="flex-1 form-control w-full">
-            <input
-              type="text"
-              placeholder="Enter Your Email Address"
-              class="input input-bordered w-full"
-            />
-          </div>
-          <div>
-            <button class="btn btn-primary">Join the readership</button>
-          </div>
-        </div> -->
       </div>
     </div>
-    <!-- <div class="bg-zinc-500 p-16 flex-1 relative overflow-hidden"> -->
-    <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
-    <!-- </div> -->
     <div class="w-[80px] h-[80px] absolute top-[20%] left-[20%] float animate">
       <Image
         src={Time}
         alt="time hologram"
-        class="absolute inset-0 w-full h-full"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
       />
     </div>
     <div class="w-[80px] h-[80px] absolute top-[5%] right-[25%] float animate">
       <Image
         src={Hammer}
         alt="time hologram"
-        class="absolute inset-0 w-full h-full"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
       />
     </div>
     <div
@@ -62,7 +49,7 @@ import { Image } from 'astro:assets';
       <Image
         src={Anvil}
         alt="anvil hologram"
-        class="absolute inset-0 w-full h-full"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
       />
     </div>
     <div
@@ -71,7 +58,7 @@ import { Image } from 'astro:assets';
       <Image
         src={Alchemy}
         alt="time hologram"
-        class="absolute inset-0 w-full h-full"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
       />
     </div>
   </HeroWrapper>

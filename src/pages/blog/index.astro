@@ -14,11 +14,15 @@ const allBlogPosts = await getCollection(
 );
 ---
 
-<Layout title="Blog Posts">
+<Layout title="Notes From The Forge">
   <Section>
     <Container>
       <Breadcrumbs crumbs={[{ label: 'Blog' }]} />
-      <Heading title="Blog Posts" subtitle="Blog posts subtitle" />
+      <Heading
+        highlight={['The Forge']}
+        title="Notes From The Forge"
+        subtitle="Dive deep on topics of real and digital experiences, mindset, time, alchemy, and solopreneurship"
+      />
       <div class="grid md:grid-cols-3 gap-8 mb-16">
         {allBlogPosts.map((post) => <BlogPostCard {...post} />)}
       </div>

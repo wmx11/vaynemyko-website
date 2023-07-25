@@ -22,19 +22,19 @@ import Section from '../../components/Section.astro';
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum
       </div>
-      <div class="flex-1 relative">
+      <div class="flex-1 relative group">
         <div
-          class="bg-zinc-500 h-[600px] flex-1 card relative overflow-hidden z-10"
+          class="bg-zinc-500 h-[600px] flex-1 card relative overflow-hidden z-10 transition-transform hover:scale-[1.02]"
         >
           <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
         </div>
 
         <div
-          class="bg-primary h-[600px] card absolute translate-x-3 translate-y-3 inset-0"
+          class="bg-primary h-[600px] card absolute transition-transform translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 inset-0"
         >
         </div>
         <div
-          class="bg-accent h-[600px] card absolute -translate-x-3 -translate-y-3 inset-0"
+          class="bg-secondary h-[600px] card absolute transition-transform -translate-x-2 -translate-y-2 group-hover:-translate-x-3 group-hover:-translate-y-3 inset-0"
         >
         </div>
       </div>

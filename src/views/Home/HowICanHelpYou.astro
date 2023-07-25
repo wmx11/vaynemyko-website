@@ -1,16 +1,17 @@
 ---
 import Container from '../../components/Container.astro';
+import GradientBlur from '../../components/GradientBlur.astro';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
 ---
 
-<Section id="projects">
+<Section className="bg-primary relative overflow-hidden" id="projects">
   <Container>
     <Heading
-      highlight={['Projects']}
-      title="My Projects"
-      subtitle="Explore other projects I have launched over the years"
+      title="How I Can Help You"
+      subtitle="Explore all the projects I have launched"
       position="center"
     />
   </Container>
+  <GradientBlur />
 </Section>

@@ -3,6 +3,7 @@ import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
 import ProductCard from '../../components/ProductCard.astro';
 import Section from '../../components/Section.astro';
+import routes from '../../utils/routes';
 ---
 
 <Section id="resources">
@@ -13,10 +14,15 @@ import Section from '../../components/Section.astro';
       subtitle="Use these tools on your journey to becoming a digital blacksmith"
       position="center"
     />
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
       <ProductCard />
       <ProductCard />
       <ProductCard />
+    </div>
+    <div class="flex justify-center">
+      <a href={routes.resources} class="btn btn-outline btn-md"
+        >Browse all tools</a
+      >
     </div>
   </Container>
 </Section>

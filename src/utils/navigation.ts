@@ -7,7 +7,7 @@ const navigation = [
   },
   {
     label: 'Resources',
-    href: '#resources',
+    href: routes.resources,
   },
   {
     label: 'Blog',

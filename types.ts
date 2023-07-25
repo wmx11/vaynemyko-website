@@ -6,3 +6,5 @@ export type Position =
   | 'center'
   | null
   | undefined;
+
+export type Size = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | null | undefined;

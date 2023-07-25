@@ -9,6 +9,9 @@ interface Props {
 const { className, highlight } = Astro.props;
 ---
 
-<h2 class={twMerge('text-2xl', className)} data-highlight={highlight}>
+<h2
+  class={twMerge('text-2xl font-semibold', className)}
+  data-highlight={highlight}
+>
   <slot />
 </h2>
