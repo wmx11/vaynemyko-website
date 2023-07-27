@@ -46,7 +46,7 @@ export const footerNavigation = [
     ],
   },
   {
-    section: 'Follow me',
+    section: 'Follow me on',
     navigation: [
       {
         label: 'Twitter',
