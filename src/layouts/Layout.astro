@@ -1,24 +1,73 @@
 ---
+import { SEO } from 'astro-seo';
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
 import Footer from '../components/Footer.astro';
 import Navigation from '../components/Navigation.astro';
 import GlobalStyles from '../styles/GlobalStyles.astro';
+import Favicons from './Favicons.astro';
 
 export interface Props {
   title: string;
+  description?: string;
+  image?: string;
 }
 
-const { title } = Astro.props;
+const defaultDescription = '';
+
+const { title, description = defaultDescription, image } = Astro.props;
+
+const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 ---
 
 <!DOCTYPE html>
 <html lang="en" data-theme="synthwave">
   <head>
+    <SEO
+      title={title}
+      titleTemplate="Vayne Myko - %s"
+      description={description}
+      openGraph={{
+        basic: {
+          title: `Vayne Myko - ${title}`,
+          type: 'website',
+          image: metaImageUrl,
+        },
+      }}
+      twitter={{
+        title: `Vayne Myko - ${title}`,
+        description,
+        creator: '@vaynemyko',
+        site: 'https://vaynemyko.com',
+        image: metaImageUrl,
+      }}
+    />
+
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
+    />
+
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
+    <Favicons />
+
+    <!-- Cookie Consent Banner -->
+
+    <!-- Google Tag (gtag.js) -->
+    <script
+      async
+      type="text/partytown"
+      src="https://www.googletagmanager.com/gtag/js?id=G-9GBPDH9M47"></script>
+
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-9GBPDH9M47');
+    </script>
   </head>
   <body>
     <Navigation />
@@ -26,12 +75,10 @@ const { title } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <GlobalStyles />
+    <script>
+      import '../scripts/baseAnimation';
+      import '../scripts/textHighlight';
+    </script>
   </body>
 </html>
-
-<GlobalStyles />
-
-<script>
-  import '../scripts/baseAnimation';
-  import '../scripts/textHighlight';
-</script>

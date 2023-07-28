@@ -1,12 +1,16 @@
-import { defineConfig, sharpImageService } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
-
 import svelte from '@astrojs/svelte';
+import tailwind from '@astrojs/tailwind';
+import { defineConfig, sharpImageService } from 'astro/config';
+import partytown from '@astrojs/partytown';
 
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
-  integrations: [tailwind(), svelte()],
+  integrations: [
+    tailwind(),
+    svelte(),
+    partytown({ config: { forward: ['dataLayer.push'] } }),
+  ],
   experimental: {
     assets: true,
   },

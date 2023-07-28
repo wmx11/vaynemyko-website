@@ -12,6 +12,9 @@ const allBlogPosts = await getCollection(
   ({ data }) => data.draft !== true
 );
 
+// Sort by newest
+allBlogPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
 // Return only 6 recent blog posts
 const blogPosts = allBlogPosts.splice(0, 6);
 ---

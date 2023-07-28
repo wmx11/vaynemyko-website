@@ -1,17 +1,20 @@
 ---
 import { getCollection } from 'astro:content';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Container from '../../components/Container.astro';
-import Section from '../../components/Section.astro';
-import Layout from '../../layouts/Layout.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import Heading from '../../components/Heading.astro';
-import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Section from '../../components/Section.astro';
+import Layout from '../../layouts/Layout.astro';
 
 // Get all non-draft blog posts
 const allBlogPosts = await getCollection(
   'blog',
   ({ data }) => data.draft !== true
 );
+
+// Sort by newest
+allBlogPosts.sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 ---
 
 <Layout title="Notes From The Forge">

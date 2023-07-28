@@ -10,11 +10,11 @@ import Layout from '../layouts/Layout.astro';
 import routes from '../utils/routes';
 
 const {
-  data: { contentImageAlt, contentImage, title },
+  data: { contentImageAlt, contentImage, title, description },
 } = Astro.props as CollectionEntry<'blog'>;
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description} image={contentImage}>
   <Section>
     <Container>
       <Breadcrumbs
