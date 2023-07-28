@@ -25,7 +25,7 @@
   };
 </script>
 
-<div class="flex gap-4 animate">
+<div class="flex flex-col md:flex-row gap-4 animate">
   {#if success}
     <h2 class="text-2xl text-center p-4 bg-primary rounded-md w-full shadow-md">
       Thank you for joining "The Anvil"! <br /> You are on the right path to becoming
@@ -46,7 +46,7 @@
       {/if}
     </div>
     <div>
-      <button class="btn btn-primary shadow-md" on:click={handleClick}
+      <button class="btn btn-primary shadow-md w-full" on:click={handleClick}
         >Join the anvil</button
       >
     </div>

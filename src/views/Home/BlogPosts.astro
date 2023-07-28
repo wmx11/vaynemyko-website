@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BlogPostCard from '../../components/BlogPostCard.astro';
+import ContentCard from '../../components/ContentCard.astro';
 import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
@@ -24,8 +24,8 @@ const blogPosts = allBlogPosts.splice(0, 6);
       subtitle="Dive deep on topics of real and digital experiences, mindset, time, alchemy, and solopreneurship"
       position="center"
     />
-    <div class="grid md:grid-cols-3 gap-8 mb-16">
-      {blogPosts.map((post) => <BlogPostCard {...post} />)}
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {blogPosts.map((post) => <ContentCard {...post} />)}
     </div>
     <div class="flex justify-center">
       <a href={routes.blog} class="btn btn-outline btn-md">Browse all notes</a>

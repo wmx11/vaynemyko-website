@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
+import H1 from '../components/H1.astro';
+import NewsletterCTACard from '../components/NewsletterCTACard.astro';
 import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
-import NewsletterCTACard from '../components/NewsletterCTACard.astro';
-import Breadcrumbs from '../components/Breadcrumbs.astro';
 import routes from '../utils/routes';
-import type { CollectionEntry } from 'astro:content';
 
 const {
   data: { contentImageAlt, contentImage, title },
@@ -20,7 +21,7 @@ const {
         crumbs={[{ label: 'Blog', path: routes.blog }, { label: title }]}
       />
       <div
-        class="h-[500px] bg-red-200 rounded-md mb-16 max-w-5xl w-full mx-auto overflow-hidden"
+        class="lg:h-[500px] rounded-md mb-16 max-w-5xl w-full mx-auto overflow-hidden"
       >
         {
           contentImage && (
@@ -35,6 +36,7 @@ const {
         }
       </div>
       <article class="prose !prose-invert prose-lg mx-auto">
+        <H1>{title}</H1>
         <slot />
       </article>
     </Container>

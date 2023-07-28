@@ -17,6 +17,17 @@
           "type": "slug"
         },
         {
+          "title": "Type",
+          "name": "type",
+          "type": "choice",
+          "choices": ["blog", "resources"]
+        },
+        {
+          "title": "Call to action",
+          "name": "cta",
+          "type": "string"
+        },
+        {
           "title": "Description",
           "name": "description",
           "type": "string"
@@ -64,5 +75,15 @@
   ],
   "frontMatter.framework.id": "astro",
   "frontMatter.content.publicFolder": "public",
-  "frontMatter.preview.host": "http://localhost:3000/blog"
+  "frontMatter.preview.host": "http://localhost:3000/blog",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "blog",
+      "path": "[[workspace]]/src/content/blog"
+    },
+    {
+      "title": "resources",
+      "path": "[[workspace]]/src/content/resources"
+    }
+  ]
 }

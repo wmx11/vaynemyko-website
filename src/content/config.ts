@@ -1,11 +1,13 @@
 import { defineCollection, z } from 'astro:content';
 
-const blog = defineCollection({
+const commonCollection = {
   schema: z.object({
     title: z.string(),
     description: z.string(),
     contentImageAlt: z.string(),
     draft: z.boolean(),
+    type: z.string(),
+    cta: z.string().optional(),
     date: z
       .string()
       .or(z.date())
@@ -17,6 +19,10 @@ const blog = defineCollection({
       .transform((str) => (str ? new Date(str) : undefined)),
     contentImage: z.string().optional(),
   }),
-});
+};
 
-export const collections = { blog };
+const blog = defineCollection({ ...commonCollection });
+
+const resources = defineCollection({ ...commonCollection });
+
+export const collections = { blog, resources };

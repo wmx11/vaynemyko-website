@@ -9,6 +9,8 @@ contentImageAlt: This is a at image
 draft: false
 tags: []
 categories: []
+type: blog
+cta: Yes
 ---
 
 # This is a title

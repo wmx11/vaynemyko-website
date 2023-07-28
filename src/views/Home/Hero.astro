@@ -12,7 +12,7 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
 
 <section>
   <HeroWrapper className="justify-center">
-    <div class="flex-1 flex items-center p-16 max-w-4xl text-center">
+    <div class="flex-1 flex items-center p-16 max-w-4xl text-center z-10">
       <div class="flex flex-col space-y-8 flex-1">
         <H1
           className="animate"
@@ -29,14 +29,14 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
         </div>
       </div>
     </div>
-    <div class="w-[80px] h-[80px] absolute top-[20%] left-[20%] float animate">
+    <div class="w-[80px] h-[80px] absolute left-[5%] md:top-[20%] md:left-[20%] float animate">
       <Image
         src={Time}
         alt="time hologram"
         class="absolute inset-0 w-full h-full hover:scale-125 transition"
       />
     </div>
-    <div class="w-[80px] h-[80px] absolute top-[5%] right-[25%] float animate">
+    <div class="w-[80px] h-[80px] absolute right-[5%] md:top-[5%] md:right-[25%] float animate">
       <Image
         src={Hammer}
         alt="time hologram"
@@ -44,7 +44,7 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
       />
     </div>
     <div
-      class="w-[80px] h-[80px] absolute bottom-[15%] right-[15%] float animate"
+      class="w-[80px] h-[80px] absolute bottom-[2%] md:bottom-[15%] md:right-[15%] float animate"
     >
       <Image
         src={Anvil}
@@ -53,7 +53,7 @@ import NewsletterForm from '../../components/svelte/NewsletterForm.svelte';
       />
     </div>
     <div
-      class="w-[80px] h-[80px] absolute bottom-[15%] left-[10%] float animate"
+      class="w-[80px] h-[80px] absolute md:bottom-[15%] md:left-[10%] float animate"
     >
       <Image
         src={Alchemy}

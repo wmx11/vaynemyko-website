@@ -1,0 +1,23 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import Resource from '../../layouts/Resource.astro';
+
+export async function getStaticPaths() {
+  const items = await getCollection('resources');
+
+  return items.map((item) => ({
+    params: { slug: item.slug },
+    props: item,
+  }));
+}
+
+type Props = CollectionEntry<'resources'>;
+
+const resource = Astro.props;
+
+const { Content } = await resource.render();
+---
+
+<Resource {...resource}>
+  <Content />
+</Resource>

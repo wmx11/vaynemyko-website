@@ -1,24 +1,50 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
 import routes from '../utils/routes';
 
+interface Props {
+  data: {
+    title?: string;
+    description?: string;
+    date: Date;
+    contentImage?: string;
+    contentImageAlt?: string;
+    type: 'blog' | 'resources';
+    cta?: string;
+  };
+  slug?: string;
+  ctaCustom?: string;
+}
+
 const {
-  data: { title, description, date, contentImage, contentImageAlt },
+  data: { title, description, date, contentImage, contentImageAlt, cta, type },
   slug,
-} = Astro.props as CollectionEntry<'blog'>;
+  ctaCustom,
+} = Astro.props;
+
+const getCta = () => {
+  if (ctaCustom) {
+    return ctaCustom;
+  }
+
+  if (!cta) {
+    return type === 'blog' ? 'Read Full Note' : 'Get Free';
+  }
+
+  return cta;
+};
 ---
 
 <div
   class="card bg-white/10 shadow-xl overflow-hidden transition-transform hover:scale-[1.02]"
 >
-  <div class="w-full h-[300px] bg-zinc-500 overflow-hidden">
+  <div class="w-full max-h-[300px] overflow-hidden">
     {
       contentImage && (
         <Image
           src={contentImage}
-          alt={contentImageAlt}
-          width="100%"
+          alt={contentImageAlt ?? ''}
+          width={480}
           height={300}
           class="w-full max-w-[100%]"
         />
@@ -36,7 +62,7 @@ const {
     <div class="card-actions justify-center">
       <a
         class="btn btn-primary btn-md btn-block"
-        href={`${routes.blog}/${slug}`}>Read full note</a
+        href={`${routes[type]}/${slug}`}>{getCta()}</a
       >
     </div>
   </div>

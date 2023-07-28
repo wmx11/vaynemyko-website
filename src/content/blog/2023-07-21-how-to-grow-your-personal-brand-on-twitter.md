@@ -9,6 +9,8 @@ contentImageAlt: This is an alt image tag of the cat stuff
 draft: false
 tags: []
 categories: []
+type: blog
+cta: Readdd
 ---
 
 # H1 title

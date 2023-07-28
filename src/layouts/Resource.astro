@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Container from '../components/Container.astro';
+import H1 from '../components/H1.astro';
+import NewsletterCTACard from '../components/NewsletterCTACard.astro';
+import Section from '../components/Section.astro';
+import Layout from '../layouts/Layout.astro';
+import routes from '../utils/routes';
+import H2 from '../components/H2.astro';
+
+const {
+  data: { contentImageAlt, contentImage, title },
+} = Astro.props as CollectionEntry<'resources'>;
+---
+
+<Layout title={title}>
+  <Section>
+    <Container>
+      <Breadcrumbs
+        crumbs={[
+          { label: 'Resources', path: routes.resources },
+          { label: title },
+        ]}
+      />
+      <div
+        class="lg:h-[500px] rounded-md mb-16 max-w-5xl w-full mx-auto overflow-hidden"
+      >
+        {
+          contentImage && (
+            <Image
+              src={contentImage}
+              alt={contentImageAlt}
+              width="300"
+              height="500"
+              class="w-full h-auto"
+            />
+          )
+        }
+      </div>
+      <article class="prose !prose-invert prose-lg mx-auto">
+        <H1>{title}</H1>
+        <slot />
+        <div class="space-y-4 border-t border-t-primary/20">
+          <div class="text-center">
+            <H2>Have questions?</H2>
+            <p>Let's answer some of the most frequently asked questions.</p>
+          </div>
+          <div class="collapse collapse-arrow bg-primary/20">
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">
+              Why is this resource free?
+            </div>
+            <div class="collapse-content">
+              <p>
+                You can use this resource for free. I know how difficult it is
+                to start a new business or a new brand with little to no budget
+                on hand. When I initially started, I didn't know most of the
+                things I outline in this resource. This can be challenging for
+                new people. And that's why I don't put a price tag on this tool.
+                It's free because I want to give back to the community and make
+                most tools accessible to anyone.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-primary/20">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+              Can I share this resource with others?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Yes! You can, and you are encouraged to, share this resource
+                with other people and your peers. My goal is to reach as many
+                people as possible and grow a large, education-based community
+                that could help others grow in this space. But please respect
+                the work I put in and my intellectual property.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-primary/20">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+              Will this resource be updated in the future?
+            </div>
+            <div class="collapse-content">
+              <p>
+                I plan on updating this resource in the future to keep the
+                information relevant and up-to-date.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow bg-primary/20">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+              What if I have more questions?
+            </div>
+            <div class="collapse-content">
+              <p>
+                Not a problem! If you have any additional questions, feel free
+                to reach out to me on my social media accounts or just send me
+                an email at v.mykolaitis@modiggo.com.
+              </p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </Container>
+  </Section>
+  <Section>
+    <Container>
+      <div class="flex items-center justify-center">
+        <NewsletterCTACard />
+      </div>
+    </Container>
+  </Section>
+</Layout>
