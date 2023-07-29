@@ -1,7 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
+import ModiggoLogo from '../../assets/modiggo_logo.png';
 ---
 
 <Section id="projects">
@@ -12,5 +14,17 @@ import Section from '../../components/Section.astro';
       subtitle="Explore other projects I have launched over the years"
       position="center"
     />
+    <div class="flex justify-center">
+      <div
+        class="p-6 w-[320px] h-[200px] animate bg-primary/20 card items-center justify-center transition-transform hover:!scale-[1.02]"
+      >
+        <a href="https://modiggo.com" target="__blank">
+          <div class="text-center space-y-4">
+            <Image src={ModiggoLogo} alt="Modiggo Project Logo" />
+            <p>Custom web development as a subscription</p>
+          </div>
+        </a>
+      </div>
+    </div>
   </Container>
 </Section>

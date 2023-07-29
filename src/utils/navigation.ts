@@ -29,24 +29,7 @@ export const footerNavigation = [
     navigation,
   },
   {
-    section: 'Legal',
-    navigation: [
-      {
-        label: 'Privacy policy',
-        href: '/privacy-policy',
-      },
-      {
-        label: 'Terms of service',
-        href: '#',
-      },
-      {
-        label: 'Cookie policy',
-        href: '#',
-      },
-    ],
-  },
-  {
-    section: 'Follow me on',
+    section: 'Socials',
     navigation: [
       {
         label: 'Twitter',
@@ -60,6 +43,23 @@ export const footerNavigation = [
       //   label: 'Instagram',
       //   href: '#',
       // },
+    ],
+  },
+  {
+    section: 'Legal',
+    navigation: [
+      {
+        label: 'Privacy policy',
+        href: '/privacy-policy',
+      },
+      {
+        label: 'Terms of service',
+        href: '/terms-of-service',
+      },
+      {
+        label: 'Cookie policy',
+        href: '/cookie-policy',
+      },
     ],
   },
 ];

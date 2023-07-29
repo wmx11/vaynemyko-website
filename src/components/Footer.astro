@@ -1,15 +1,30 @@
 ---
 import { footerNavigation } from '../utils/navigation';
 import Container from './Container.astro';
+import Logo from './Logo.astro';
 import Section from './Section.astro';
+import NewsletterForm from './svelte/NewsletterForm.svelte';
 ---
 
 <footer class="border-t border-t-primary/20">
   <Section>
     <Container>
       <div class="flex flex-col md:flex-row gap-x-32 gap-y-16">
-        <a href="/">Vayne Myko</a>
-        <div class="flex flex-col md:flex-row gap-x-32 gap-y-16">
+        <div class="space-y-4">
+          <a href="/">
+            <Logo />
+          </a>
+          <div class="space-y-4 max-w-md">
+            <p>
+              Join <strong>"The Anvil"</strong>. Start your path to becoming a
+              Digital Blacksmith today.
+            </p>
+            <div>
+              <NewsletterForm client:visible />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col md:flex-row gap-x-32 gap-y-16">
           {
             footerNavigation.map((item) => (
               <div>
