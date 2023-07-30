@@ -9,7 +9,7 @@ export async function onRequestPost(context) {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.NEWSLETTER_TOKEN}`,
+        Authorization: `Bearer ${NEWSLETTER_TOKEN}`,
       },
       body: JSON.stringify({ email }),
     }
