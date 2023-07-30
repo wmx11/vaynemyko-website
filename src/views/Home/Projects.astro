@@ -4,19 +4,21 @@ import Container from '../../components/Container.astro';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
 import ModiggoLogo from '../../assets/modiggo_logo.png';
+import Hammer from '../../assets/hammer.png';
+
+import GradientBlur from '../../components/GradientBlur.astro';
 ---
 
-<Section id="projects">
+<Section className="bg-primary relative overflow-hidden" id="projects">
   <Container>
     <Heading
-      highlight={['Projects']}
       title="My Projects"
       subtitle="Explore other projects I have launched over the years"
       position="center"
     />
     <div class="flex justify-center">
       <div
-        class="p-6 w-[320px] h-[200px] animate bg-primary/20 card items-center justify-center transition-transform hover:!scale-[1.02]"
+        class="p-6 w-[320px] h-[200px] animate shadow-lg shadow-accent/10 bg-accent/20 border border-accent/40 card items-center justify-center transition-transform hover:!scale-[1.02]"
       >
         <a href="https://modiggo.com" target="__blank">
           <div class="text-center space-y-4">
@@ -27,4 +29,14 @@ import ModiggoLogo from '../../assets/modiggo_logo.png';
       </div>
     </div>
   </Container>
+  <GradientBlur />
+  <div
+    class="w-[80px] h-[80px] absolute top-[5%] right-[5%] float animate"
+  >
+    <Image
+      src={Hammer}
+      alt="time hologram"
+      class="absolute inset-0 w-full h-full hover:scale-125 transition"
+    />
+  </div>
 </Section>

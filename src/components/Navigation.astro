@@ -31,11 +31,26 @@ import Logo from './Logo.astro';
     <div class="pt-16 md:pt-0 md:flex-1">
       <ul class="flex flex-col md:flex-row gap-8 [&>li]:font-bold">
         {
-          navigation.map((item) => (
-            <li>
-              <a href={item.href}>{item.label}</a>
-            </li>
-          ))
+          navigation.map((item) => {
+            if (item.href.startsWith('#')) {
+              return (
+                <li>
+                  <a
+                    class="cursor-pointer"
+                    data-scroll-to={item.href.startsWith('#') ? item.href : ''}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              );
+            }
+
+            return (
+              <li>
+                <a href={item.href}>{item.label}</a>
+              </li>
+            );
+          })
         }
       </ul>
     </div>

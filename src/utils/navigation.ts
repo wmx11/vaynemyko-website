@@ -15,7 +15,7 @@ const navigation = [
   },
   {
     label: 'Newsletter',
-    href: '#',
+    href: '#newsletter',
   },
   {
     label: 'Contact',
