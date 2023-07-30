@@ -1,12 +1,11 @@
 import partytown from '@astrojs/partytown';
 import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
-import { defineConfig , sharpImageService } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import { defineConfig, sharpImageService } from 'astro/config';
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  output: 'hybrid',
   site: 'https://vaynemyko.com',
   integrations: [
     tailwind(),
@@ -21,7 +20,6 @@ export default defineConfig({
     assets: true,
   },
   image: {
-    service: sharpImageService()
+    service: sharpImageService(),
   },
-  adapter: vercel(),
 });
