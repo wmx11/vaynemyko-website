@@ -1,6 +1,6 @@
 import svelte from '@astrojs/svelte';
 import tailwind from '@astrojs/tailwind';
-import { defineConfig, sharpImageService } from 'astro/config';
+import { defineConfig } from 'astro/config';
 import partytown from '@astrojs/partytown';
 import cloudflare from '@astrojs/cloudflare';
 
@@ -8,10 +8,6 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   output: 'hybrid',
   site: 'https://vaynemyko.com',
-  build: {
-    inlineStylesheets: 'auto',
-  },
-  compressHTML: true,
   integrations: [
     tailwind(),
     svelte(),
@@ -23,9 +19,6 @@ export default defineConfig({
   ],
   experimental: {
     assets: true,
-  },
-  image: {
-    service: sharpImageService(),
   },
   adapter: cloudflare(),
 });
