@@ -3,18 +3,21 @@ import tailwind from '@astrojs/tailwind';
 import { defineConfig, sharpImageService } from 'astro/config';
 import partytown from '@astrojs/partytown';
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   output: 'hybrid',
-  integrations: [
-    tailwind(),
-    svelte(),
-    partytown({ config: { forward: ['dataLayer.push'] } }),
-  ],
+  integrations: [tailwind(), svelte(), partytown({
+    config: {
+      forward: ['dataLayer.push']
+    }
+  })],
   experimental: {
-    assets: true,
+    assets: true
   },
   image: {
-    service: sharpImageService(),
+    service: sharpImageService()
   },
+  adapter: cloudflare()
 });

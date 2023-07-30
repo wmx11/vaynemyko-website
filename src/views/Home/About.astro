@@ -1,54 +1,84 @@
 ---
+import { Image } from 'astro:assets';
+import Time from '../../assets/time.png';
+import Alchemy from '../../assets/alchemy.png';
 import Container from '../../components/Container.astro';
+import AboutMe from '../../assets/about_me.png';
 import Heading from '../../components/Heading.astro';
 import Section from '../../components/Section.astro';
+import GradientBlur from '../../components/GradientBlur.astro';
 ---
 
 <Section id="about">
-  <Container>
+  <Container className="relative">
     <Heading
       highlight={['Vayne Myko']}
       title="Who is Vayne Myko?"
       subtitle="A digital blacksmith on a mission to build a community of digital artisans"
       position="center"
+      className="relative z-10"
     />
+    <div
+      class="w-[80px] h-[80px] absolute top-[0%] left-0 md:left-[15%] float animate"
+    >
+      <Image
+        src={Alchemy}
+        alt="time hologram"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
+      />
+    </div>
+    <div
+      class="w-[80px] h-[80px] absolute top-[0%] right-0 md:right-[15%] float animate"
+    >
+      <Image
+        src={Time}
+        alt="time hologram"
+        class="absolute inset-0 w-full h-full hover:scale-125 transition"
+      />
+    </div>
+
     <div class="flex flex-col md:flex-row gap-8">
       <p class="flex-1 text-lg">
         <strong>Hey, I'm Vayne Myko.</strong>
         <br />
         <br />
         <strong
-          >I'm a Digital Blacksmith and I help other creators and businesses get
-          off the ground.</strong
-        >
+          >I'm a Digital blacksmith, and I help other creators and businesses
+          get off the ground.
+        </strong>
         <br />
         <br />
-        I'm the person other people reach out to when they feel lost on their creator
+        I'm the person other people reach out to when they feel lost in their creator
         or business journey, experiences, vision, mindset, lifestyle, and productivity.
         <br />
         <br />
-        I help them break down difficult topics into easily digestable pieces, refine
-        their vision, and help them push their business so they could earn more while
-        working less hours by methodically increasing productivity.
+        I help them break down difficult topics into easily digestible pieces, refine
+        their vision, and push their businesses so they can earn more while working
+        fewer hours by methodically increasing productivity.
         <br />
         <br />
         Whenever someone wants to start their online journey as a creator or a business,
-        I help them find their <strong>archetype</strong> and create systems for
-        success.
+        I help them find their archetype and create systems for success.
       </p>
       <div class="flex-1 relative group">
         <div
-          class="bg-zinc-500 h-[600px] flex-1 card relative overflow-hidden z-10 transition-transform hover:scale-[1.02]"
+          class="h-[600px] flex-1 card relative overflow-hidden z-10 transition-transform hover:scale-[1.02]"
         >
-          <!-- <Image src={MyImage} alt="image" class="absolute inset-0" /> -->
+          <Image
+            src={AboutMe}
+            alt="image"
+            width={480}
+            height={620}
+            class="absolute w-full h-full inset-0 object-cover"
+          />
         </div>
 
         <div
-          class="bg-primary h-[600px] card absolute transition translate-x-2 translate-y-2 group-hover:translate-x-3 group-hover:translate-y-3 inset-0 blur-0 group-hover:blur-[20px]"
+          class="bg-primary h-[600px] card absolute transition translate-x-1 translate-y-1 group-hover:translate-x-2 group-hover:translate-y-2 inset-0 blur-0 group-hover:blur-[5px]"
         >
         </div>
         <div
-          class="bg-secondary h-[600px] card absolute transition -translate-x-2 -translate-y-2 group-hover:-translate-x-3 group-hover:-translate-y-3 inset-0 blur-0 group-hover:blur-[20px]"
+          class="bg-secondary h-[600px] card absolute transition -translate-x-1 -translate-y-1 group-hover:-translate-x-2 group-hover:-translate-y-2 inset-0 blur-0 group-hover:blur-[5px]"
         >
         </div>
       </div>
@@ -56,7 +86,7 @@ import Section from '../../components/Section.astro';
         I started out as a translator who quickly found out he didn't like his
         job. I started doing graphic design on the side but eventually ended up
         with a master's degree in Information Systems Management and climbing up
-        the corporate ladder as the lead front-end developer, and team lead for
+        the corporate ladder as the lead front-end developer and team lead for
         the largest e-pharmacy in the region.
         <br />
         <br />

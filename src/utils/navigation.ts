@@ -17,10 +17,6 @@ const navigation = [
     label: 'Newsletter',
     href: '#newsletter',
   },
-  {
-    label: 'Contact',
-    href: '#',
-  },
 ];
 
 export const footerNavigation = [
@@ -59,6 +55,15 @@ export const footerNavigation = [
       {
         label: 'Cookie policy',
         href: '/cookie-policy',
+      },
+    ],
+  },
+  {
+    section: 'Email',
+    navigation: [
+      {
+        label: 'v.mykolaitis@modiggo.com',
+        href: 'mailto:v.mykolaitis@modiggo.com',
       },
     ],
   },
