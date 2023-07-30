@@ -27,10 +27,12 @@
 
 <div class="flex flex-col md:flex-row gap-4 animate">
   {#if success}
-    <h2 class="text-2xl text-center p-4 bg-primary rounded-md w-full shadow-md">
-      Thank you for joining "The Anvil"! <br /> You are on the right path to becoming
-      a digital blacksmith!
-    </h2>
+    <div class="text-xl text-center p-4 bg-primary card w-full shadow-md">
+      <h2>
+        Thank you for joining <strong>"The Anvil"</strong>! <br /> You are on the
+        right path to becoming a digital blacksmith!
+      </h2>
+    </div>
   {:else}
     <div class="flex-1 form-control w-full">
       <input
