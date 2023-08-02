@@ -1,7 +1,11 @@
 <script lang="ts">
   let success = false;
-  let input: string;
+  let name: string;
+  let email: string;
   let error: string | null;
+
+  // Digital Blacksmith group
+  const groups = ['94229391884682951'];
 
   const handleClick = async () => {
     const request = await fetch('/api/newsletter', {
@@ -9,7 +13,7 @@
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: input }),
+      body: JSON.stringify({ email, fields: { name }, groups }),
     });
 
     const data = await request.json();
@@ -25,22 +29,38 @@
   };
 </script>
 
-<div class="flex flex-col md:flex-row gap-4 animate">
+<div class="flex flex-col gap-4 animate">
   {#if success}
     <div class="text-xl text-center p-4 bg-primary card w-full shadow-md">
       <h2>
-        Thank you for joining <strong>"The Anvil"</strong>! <br /> You are on the
-        right path to becoming a digital blacksmith!
+        Thank you for joining <strong>"The Anvil"</strong>! <br /> You are on
+        the right path to becoming a <strong>Digital Blacksmith</strong>!
       </h2>
     </div>
   {:else}
-    <div class="flex-1 form-control w-full">
-      <input
-        bind:value={input}
-        type="text"
-        placeholder="Enter Your Email Address"
-        class="input input-primary w-full"
-      />
+    <div class="gap-4 flex-1 form-control w-full">
+      <div>
+        <div class="label">
+          <span class="label-text font-bold">First Name</span>
+        </div>
+        <input
+          bind:value={name}
+          type="text"
+          placeholder="Enter Your First Name"
+          class="input input-primary w-full"
+        />
+      </div>
+      <div>
+        <div class="label">
+          <span class="label-text font-bold">Email Address</span>
+        </div>
+        <input
+          bind:value={email}
+          type="text"
+          placeholder="Enter Your Email Address"
+          class="input input-primary w-full"
+        />
+      </div>
       {#if error}
         <div class="label">
           <span class="label-text font-bold text-red-500">{error}</span>
@@ -49,7 +69,7 @@
     </div>
     <div>
       <button class="btn btn-primary shadow-md w-full" on:click={handleClick}
-        >Join the anvil</button
+        >Join "the anvil"</button
       >
     </div>
   {/if}

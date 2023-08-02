@@ -1,8 +1,6 @@
 export async function onRequestPost(context) {
   const data = await context?.request.json();
 
-  const email = data?.email;
-
   const subscribe = await fetch(
     'https://connect.mailerlite.com/api/subscribers',
     {
@@ -11,7 +9,7 @@ export async function onRequestPost(context) {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${context.env.NEWSLETTER_TOKEN}`,
       },
-      body: JSON.stringify({ email }),
+      body: JSON.stringify({ ...data }),
     }
   );
 
