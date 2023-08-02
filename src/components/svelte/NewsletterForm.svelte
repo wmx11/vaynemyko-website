@@ -29,7 +29,7 @@
   };
 </script>
 
-<div class="flex flex-col gap-4 animate">
+<div class="flex flex-col gap-6 animate max-w-2xl mx-auto">
   {#if success}
     <div class="text-xl text-center p-4 bg-primary card w-full shadow-md">
       <h2>
@@ -38,7 +38,7 @@
       </h2>
     </div>
   {:else}
-    <div class="gap-4 flex-1 form-control w-full">
+    <div class="gap-2 flex-1 form-control w-full">
       <div>
         <div class="label">
           <span class="label-text font-bold">First Name</span>
