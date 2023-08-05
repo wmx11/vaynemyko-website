@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import Container from '../../../components/Container.astro';
+import H1 from '../../../components/H1.astro';
+import Heading from '../../../components/Heading.astro';
+import Section from '../../../components/Section.astro';
+import HammerSketch from '../../../assets/hammer_sketch.png';
+import AnvilSketch from '../../../assets/anvil_sketch.png';
+import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
+import ArrowRight from '../../../assets/arrow_right.png';
+---
+
+<Section>
+  <Container className="relative">
+    <div class="relative">
+      <Heading
+        className="relative z-10"
+        position="center"
+        highlight={['digital blacksmith?']}
+        title="What is a digital blacksmith?"
+      />
+      <div
+        class="w-[80px] h-[80px] absolute top-0 left-0 md:left-[15%] float animate"
+      >
+        <Image
+          src={HammerSketch}
+          alt="time hologram"
+          class="absolute inset-0 w-full h-full hover:scale-125 transition"
+        />
+      </div>
+      <div
+        class="w-[80px] h-[80px] absolute top-0 right-0 md:right-[15%] float animate"
+      >
+        <Image
+          src={AnvilSketch}
+          alt="anvil hologram"
+          class="absolute inset-0 w-full h-full hover:scale-125 transition"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
+      <div class="text-lg space-y-8 flex-1">
+        <p>
+          Digital Blacksmiths are individuals who have mastered the art of
+          creation, learning, perseverance, experiences, and relationships. They
+          have aligned their lives with their goals and purpose. They are
+          someone who can change and shape the very fabric of this digital
+          world. Taking seemingly uninspiring items and forging them into
+          awe-inspiring pieces
+        </p>
+        <p>
+          The purpose of digital blacksmiths is to build tight-knit guilds of
+          people who share knowledge and teach others. They are community-driven
+          individuals seeking to push others forward in their pursuit of
+          fulfillment and freedom. They do this through life-long learning and
+          becoming the best versions of themselves. By being mentors to their
+          apprentices. By transforming into idols others can look up to.
+        </p>
+        <p>
+          They have developed traits very few people possess: <strong
+            >perseverance, integrity, community-drivenness, life-long learning,
+            creativity, problem-solving, patience, and leadership.</strong
+          >
+        </p>
+        <p>
+          If you are someone who relates to this, If you are someone who sees
+          immense value in becoming a digital blacksmith, Or if you are someone
+          seeking to forge your own path, just sign this creed with your first
+          name and your email address. Become a Digital Blacksmith. Change your
+          life. Help others do the same. Become one of us.
+        </p>
+      </div>
+      <div class="flex-1 w-full z-10 p-4 card bg-white/10 animate">
+        <div>
+          <NewsletterForm client:visible />
+        </div>
+      </div>
+
+      <div
+        class="hidden absolute bottom-[-10%] w-[calc(100%-16px)] md:flex items-center justify-center"
+      >
+        <Image src={ArrowRight} alt="Arrow pointing to the right" width={360} />
+      </div>
+    </div>
+  </Container>
+</Section>
