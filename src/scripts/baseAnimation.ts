@@ -10,13 +10,11 @@ inView(
         transform: [
           'translateY(-100px)',
           'translateY(0px)',
-          'translateY(15px)',
-          'translateY(0px)',
         ],
       },
       {
-        duration: 1,
-        delay: stagger(0.2),
+        duration: 0.8,
+        delay: stagger(0.15),
       }
     );
   },
