@@ -1,5 +1,5 @@
 ---
-title: Improve your productivity by 80%. Get rid of your tasks.
+title: Improve your productivity by 80%. Get rid of your tasks
 slug: improve-your-productivity-by-80-get-rid-of-your-tasks
 type: blog
 cta: ""

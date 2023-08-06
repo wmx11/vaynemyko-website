@@ -1,13 +1,12 @@
 ---
 import { Image } from 'astro:assets';
+import AnvilSketch from '../../../assets/anvil_sketch.png';
+import ArrowRight from '../../../assets/arrow_right.png';
+import HammerSketch from '../../../assets/hammer_sketch.png';
 import Container from '../../../components/Container.astro';
-import H1 from '../../../components/H1.astro';
 import Heading from '../../../components/Heading.astro';
 import Section from '../../../components/Section.astro';
-import HammerSketch from '../../../assets/hammer_sketch.png';
-import AnvilSketch from '../../../assets/anvil_sketch.png';
 import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
-import ArrowRight from '../../../assets/arrow_right.png';
 ---
 
 <Section>
@@ -70,7 +69,7 @@ import ArrowRight from '../../../assets/arrow_right.png';
           life. Help others do the same. Become one of us.
         </p>
       </div>
-      <div class="flex-1 w-full z-10 p-4 card bg-white/10 animate">
+      <div class="flex-1 w-full z-10 p-6 card bg-white/10 animate">
         <div>
           <NewsletterForm client:visible />
         </div>

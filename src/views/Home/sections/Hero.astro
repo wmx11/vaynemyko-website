@@ -2,31 +2,29 @@
 import { Image } from 'astro:assets';
 import Alchemy from '../../../assets/alchemy.png';
 import Anvil from '../../../assets/anvil.png';
-import Hammer from '../../../assets/hammer.png';
 import ArrowDown from '../../../assets/arrow_down.png';
+import Hammer from '../../../assets/hammer.png';
 import Time from '../../../assets/time.png';
 import H1 from '../../../components/H1.astro';
 import H2 from '../../../components/H2.astro';
 import HeroWrapper from '../../../components/HeroWrapper.astro';
-import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
 ---
 
 <section>
   <HeroWrapper className="justify-center">
     <div class="flex-1 flex items-center p-16 max-w-3xl text-center z-10">
       <div class="flex flex-col space-y-8 flex-1">
-        <H1 className="animate" highlight={['forge your path?']}>
-          ready to forge your path?
+        <H1 className="animate" highlight={['Digital Blacksmith?']}>
+          Ready to become a Digital Blacksmith?
         </H1>
-        <H2 className="animate" highlight={['Digital Blacksmith']}>
-          Become a <strong>Digital Blacksmith</strong>. Forge your own path
-          every Saturday with topics on experiences, one-person businesses,
-          alchemy, and mindset.
+        <H2 className="animate" highlight={['Forge your own path']}>
+          <strong>Forge your own path</strong> every Saturday with topics on experiences,
+          one-person businesses, alchemy, and mindset.
         </H2>
       </div>
     </div>
     <div
-      class="flex justify-center items-center flex-1 absolute bottom-0 md:bottom-20 w-[calc(100%-16px)] animate"
+      class="flex justify-center items-center flex-1 absolute bottom-0 md:bottom-0 w-[calc(100%-16px)] animate"
     >
       <Image src={ArrowDown} width={50} alt="time hologram" />
     </div>
@@ -59,7 +57,7 @@ import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
       />
     </div>
     <div
-      class="w-[80px] h-[80px] absolute md:bottom-[15%] md:left-[10%] float animate"
+      class="w-[80px] h-[80px] absolute md:bottom-[22%] md:left-[10%] float animate"
     >
       <Image
         src={Alchemy}
