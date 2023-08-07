@@ -1,11 +1,9 @@
 ---
-import { Image } from 'astro:assets';
-import ArrowRight from '../../../assets/arrow_right.png';
 import Container from '../../../components/Container.astro';
 import Heading from '../../../components/Heading.astro';
+import RevealAnimation from '../../../components/RevealAnimation.astro';
 import Section from '../../../components/Section.astro';
 import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
-import RevealAnimation from '../../../components/RevealAnimation.astro';
 ---
 
 <Section className="bg-primary relative overflow-hidden">
@@ -51,12 +49,6 @@ import RevealAnimation from '../../../components/RevealAnimation.astro';
         <div>
           <NewsletterForm client:visible />
         </div>
-      </div>
-
-      <div
-        class="hidden absolute bottom-[-10%] w-[calc(100%-16px)] md:flex items-center justify-center"
-      >
-        <Image src={ArrowRight} alt="Arrow pointing to the right" width={360} />
       </div>
     </div>
   </Container>
