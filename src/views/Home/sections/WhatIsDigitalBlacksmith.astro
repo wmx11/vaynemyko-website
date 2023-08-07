@@ -1,45 +1,23 @@
 ---
 import { Image } from 'astro:assets';
-import AnvilSketch from '../../../assets/anvil_sketch.png';
 import ArrowRight from '../../../assets/arrow_right.png';
-import HammerSketch from '../../../assets/hammer_sketch.png';
 import Container from '../../../components/Container.astro';
 import Heading from '../../../components/Heading.astro';
 import Section from '../../../components/Section.astro';
 import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
+import RevealAnimation from '../../../components/RevealAnimation.astro';
 ---
 
-<Section>
+<Section className="bg-primary relative overflow-hidden">
   <Container className="relative">
-    <div class="relative">
-      <Heading
-        className="relative z-10"
-        position="center"
-        highlight={['digital blacksmith?']}
-        title="What is a digital blacksmith?"
-      />
-      <div
-        class="w-[80px] h-[80px] absolute top-0 left-0 md:left-[15%] float animate"
-      >
-        <Image
-          src={HammerSketch}
-          alt="time hologram"
-          class="absolute inset-0 w-full h-full hover:scale-125 transition"
-        />
-      </div>
-      <div
-        class="w-[80px] h-[80px] absolute top-0 right-0 md:right-[15%] float animate"
-      >
-        <Image
-          src={AnvilSketch}
-          alt="anvil hologram"
-          class="absolute inset-0 w-full h-full hover:scale-125 transition"
-        />
-      </div>
-    </div>
+    <Heading
+      className="relative z-10"
+      position="center"
+      title="What is a digital blacksmith?"
+    />
     <div class="flex flex-col md:flex-row gap-8 items-center justify-between">
       <div class="text-lg space-y-8 flex-1">
-        <p>
+        <p class="animate">
           Digital Blacksmiths are individuals who have mastered the art of
           creation, learning, perseverance, experiences, and relationships. They
           have aligned their lives with their goals and purpose. They are
@@ -47,7 +25,7 @@ import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
           world. Taking seemingly uninspiring items and forging them into
           awe-inspiring pieces
         </p>
-        <p>
+        <p class="animate">
           The purpose of digital blacksmiths is to build tight-knit guilds of
           people who share knowledge and teach others. They are community-driven
           individuals seeking to push others forward in their pursuit of
@@ -55,13 +33,13 @@ import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
           becoming the best versions of themselves. By being mentors to their
           apprentices. By transforming into idols others can look up to.
         </p>
-        <p>
+        <p class="animate">
           They have developed traits very few people possess: <strong
             >perseverance, integrity, community-drivenness, life-long learning,
             creativity, problem-solving, patience, and leadership.</strong
           >
         </p>
-        <p>
+        <p class="animate">
           If you are someone who relates to this, If you are someone who sees
           immense value in becoming a digital blacksmith, Or if you are someone
           seeking to forge your own path, just sign this creed with your first
@@ -69,7 +47,7 @@ import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
           life. Help others do the same. Become one of us.
         </p>
       </div>
-      <div class="flex-1 w-full z-10 p-6 card bg-white/10 animate">
+      <div class="flex-1 w-full z-10 p-6 card bg-black/30 animate">
         <div>
           <NewsletterForm client:visible />
         </div>
@@ -82,4 +60,5 @@ import NewsletterForm from '../../../components/svelte/NewsletterForm.svelte';
       </div>
     </div>
   </Container>
+  <RevealAnimation />
 </Section>

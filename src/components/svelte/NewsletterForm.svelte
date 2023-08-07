@@ -29,7 +29,7 @@
   };
 </script>
 
-<div class="flex flex-col gap-6 animate max-w-2xl mx-auto">
+<div class="flex flex-col gap-6 max-w-2xl mx-auto">
   {#if success}
     <div class="text-xl text-center p-4 bg-primary card w-full shadow-md">
       <h2>
@@ -68,7 +68,7 @@
       {/if}
     </div>
     <div>
-      <button class="btn btn-primary shadow-md w-full" on:click={handleClick}
+      <button class="btn border-none bg-gradient-to-r from-primary to-secondary shadow-md w-full" on:click={handleClick}
         >Join "the anvil"</button
       >
     </div>
